@@ -19,21 +19,20 @@ create_testbed(){
 configure_test(){
     # Copy configuration script from "scripts" directory
     # The script create Docker Network and Containers
-    cp scripts/$i/configure.sh ./configure.sh
-    cp scripts/$i/test.cfg ./test.cfg
-    bash configure.sh
+    cp scripts/$i/* ./
+    #bash configure.sh
 }
 
 ping_test(){
     cp scripts/$i/ping.sh ./ping.sh
-    bash ping.sh
-    rm ping.sh
+    #bash ping.sh
+    #rm ping.sh
 }
 
 iperf_test(){
     cp scripts/$i/iperf.sh ./iperf.sh
-    bash iperf.sh
-    rm iperf.sh
+    #bash iperf.sh
+    #rm iperf.sh
 }
 
 remove_testbed(){
@@ -57,18 +56,18 @@ for i in ${TEST_LIST}; do
 #      remove_testbed
     ;;
     2) # 2 Boxes, 2 Containers, Through Internet (L3 Networking)
-      create_testbed 0 2 1 0
+      create_testbed 0 1 2 0
       configure_test $i
       ping_test $i
       iperf_test $i
-      remove_testbed
+#      remove_testbed
     ;;
     3) # 2 Boxes, 2 Containers, Manually configured Overlay networking
-      create_testbed 0 2 1 0
+      create_testbed 0 1 2 0
       configure_test $i
       ping_test $i
       iperf_test $i
-      remove_testbed
+      #remove_testbed
     ;;
     4) # 1 Swarm, 2 Boxes, 2 Containers, Overlay Networking
       create_testbed 1 1 1 1

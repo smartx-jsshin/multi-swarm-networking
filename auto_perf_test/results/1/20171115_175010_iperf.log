@@ -1,0 +1,14 @@
+------------------------------------------------------------
+Client connecting to 192.168.10.102, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 192.168.10.101 port 45554 connected with 192.168.10.102 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 3.0 sec  4.14 GBytes  11.9 Gbits/sec
+------------------------------------------------------------
+Client connecting to 192.168.10.101, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 192.168.10.102 port 57676 connected with 192.168.10.101 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 3.0 sec  4.11 GBytes  11.8 Gbits/sec
